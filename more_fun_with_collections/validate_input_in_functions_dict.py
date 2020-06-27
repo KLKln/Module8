@@ -4,40 +4,52 @@ Author: Kelly Klein
 Last date modified: 6/17/2020
 This program will .
 """
-def get_test_scores(test_name, test_score, invalid_message='Invalid test score, try again!'):
+
+
+def get_test_scores(invalid_message='Invalid test score, try again!'):
     """
 Use reST style.
-:param test_name: input for name of test
-:param test_score: score the student got on test
 :param invalid_message:"invalid test score, try again!"
 :return: test_name, test_score
 raises keyError: raises an exception
     """
-    scores_dict = dict()
-    num_scores = input('How many test scores do you have?')
-    # loop to get num_scores input
-    x=1
-    while x <= int(num_scores):
-        try:
-            x += 1
-            score = input('Please enter test score #' + num_scores + ': ')
-            # if input is valid add to scores dictionary
-            if int(score) < 0:
-                return False
-            elif int(score) > 100:
-                return False
-        except ValueError:
-            raise ValueError(invalid_message)
+    while True:
+        scores_dict = dict()
+        num_scores = input('How many test scores do you have?')
+        # loop to get num_scores input
+        x=0
+        while x < int(num_scores):
+            try:
+                x += 1
+                score = input('Please enter test score: ')
+                # if input is valid add to scores dictionary
+                if int(score) < 0:
+                    return False
+                elif int(score) > 100:
+                    return False
+                else:
+                    scores_dict.update({'test'+num_scores:int(score)})
+            except ValueError:
+                raise ValueError(invalid_message)
+
+        #return scores_dict
+        for value in scores_dict.values():
+            print(scores_dict)
 
     #Key valuepair, score is going to be the value
     #I define the key
 
 
-def average_scores(a_dict):
+def average_scores(scores_dict):
     #num_scores = get length of dictionary
+    num_scores = len(scores_dict)
     #parse every score in dictionary
+    value = 0
+    for x in scores_dict.values():
+        value += x
     #calculate the average
-    pass
+        average = value/num_scores
+        return average
 
 def score_input(test_name, test_score=0, invalid_message='Invalid test score, try again!'):
     """
@@ -68,4 +80,5 @@ raises keyError: raises an exception
 
 
 if __name__ == '__main__':
-    pass
+    get_test_scores()
+    average_scores(get_test_scores())
