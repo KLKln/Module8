@@ -8,7 +8,7 @@ if the element is in the set.
 """
 
 
-def in_set(a_set, b_set):
+def in_set(a_set, element):
     """
     use reST style
     :param a_set:
@@ -18,8 +18,8 @@ def in_set(a_set, b_set):
     """
     i_s = True
     for x in a_set:
-        if x in a_set:
-            return True
-        
+        if not element in a_set:
+            return False
+
 
 

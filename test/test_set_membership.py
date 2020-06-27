@@ -19,7 +19,7 @@ class MyTestCase(unittest.TestCase):
         a_element = [3, 5]
         #assertTrue, expect  True to be the result
         #assertTrue(function_name(parameter11, parameter2)
-        self.assertTrue(sm.in_set(a_set), a_element)
+        self.assertTrue(sm.in_set(a_set, a_element))
 
     def test__in_set_false(self):
         #create a set as a variable
@@ -28,7 +28,7 @@ class MyTestCase(unittest.TestCase):
         b_element =[2, 4]
         #assertFalse, expect False to be the result
         #assertFalse(function_name(parameter11, parameter2)
-        self.assertFalse(sm.in_set(b_set), b_element)
+        self.assertFalse(sm.in_set(b_set, b_element))
 
 
 if __name__ == '__main__':
