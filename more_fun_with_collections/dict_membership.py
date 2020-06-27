@@ -1,3 +1,11 @@
+"""
+Program: dict_membership.py
+Author:  Kelly Klein
+Date: 06/27/2020
+
+This program accept a dictionary and key and return a boolean value stating
+if the key is in the dictionary.
+"""
 def in_dict(a_dict, key):
     """
     use reST style
