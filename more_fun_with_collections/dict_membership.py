@@ -9,8 +9,8 @@ def in_dict(a_dict, key):
 
     i_d = True
     for x in a_dict:
-        if key in a_dict:
-            i_d = True
+        if key not in a_dict:
+            i_d = False
             break
     return i_d
 
