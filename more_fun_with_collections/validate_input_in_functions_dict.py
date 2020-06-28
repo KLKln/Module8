@@ -13,43 +13,45 @@ Use reST style.
 :return: test_name, test_score
 raises keyError: raises an exception
     """
+
+    scores_dict = dict()
+    num_scores = input('How many test scores do you have?')
+    # loop to get num_scores input
+    num_scores = int(num_scores)
     while True:
-        scores_dict = dict()
-        num_scores = input('How many test scores do you have?')
-        # loop to get num_scores input
-        x=0
-        while x < int(num_scores):
-            try:
-                x += 1
+        try:
+            x = 1
+            if x <= num_scores:
                 score = input('Please enter test score: ')
-                # if input is valid add to scores dictionary
-                if int(score) < 0:
-                    return False
-                elif int(score) > 100:
-                    return False
-                else:
-                    scores_dict.update({'test'+num_scores:int(score)})
-            except ValueError:
-                raise ValueError(invalid_message)
+                if score.isdigit and 0 <= int(score) <= 100:
+                    scores_dict.update({'test' + str(x): int(score)})
+                    x += 1
+                    break
+        except ValueError:
+            raise ValueError(invalid_message)
+            continue
 
-        #return scores_dict
-        for value in scores_dict.values():
-            print(scores_dict)
+    # return scores_dict
+            for value in scores_dict.values():
+                return print(value)
 
-    #Key valuepair, score is going to be the value
-    #I define the key
+
+
+# Key valuepair, score is going to be the value
+# I define the key
 
 
 def average_scores(scores_dict):
-    #num_scores = get length of dictionary
+    # num_scores = get length of dictionary
     num_scores = len(scores_dict)
-    #parse every score in dictionary
+    # parse every score in dictionary
     value = 0
     for x in scores_dict.values():
         value += x
-    #calculate the average
-        average = value/num_scores
+        # calculate the average
+        average = value / num_scores
         return average
+
 
 def score_input(test_name, test_score=0, invalid_message='Invalid test score, try again!'):
     """
@@ -75,10 +77,9 @@ raises keyError: raises an exception
         else:
             test = (test_name + ':' + " " + str(test_score))
 
-    # return { test_name: test_score}
+        # return { test_name: test_score}
         return test
 
 
 if __name__ == '__main__':
     get_test_scores()
-    average_scores(get_test_scores())
