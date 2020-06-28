@@ -36,7 +36,7 @@ raises keyError: raises an exception
 
     # return scores_dict
         for key, value in scores_dict.items():
-            return print(key,':',value)
+            return print(key,':',value, 'average score: ', average_scores(scores_dict))
 
 
 
@@ -46,11 +46,10 @@ def average_scores(scores_dict):
     # num_scores = get length of dictionary
     num_scores = len(scores_dict)
     # parse every score in dictionary
-    value = 0
     for x in scores_dict.values():
-        value += x
+        x += x
         # calculate the average
-        average = value / num_scores
+        average = x / num_scores
         return average
 
 
