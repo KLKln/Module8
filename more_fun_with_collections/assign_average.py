@@ -23,6 +23,8 @@ raises keyError: raises an exception
             letter_grade = 'B'
         elif int(i) >= 70:
             letter_grade = 'C'
+        elif int(i) >= 60:
+            letter_grade = 'D'
             #'B':90,
             #'C':80,
             #'D':70,
