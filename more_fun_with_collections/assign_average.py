@@ -1,21 +1,39 @@
+"""
+Program: assign_average.py
+Author: Kelly Klein
+Last date modified: 6/28/2020
+This program will take in a list of scores and return an average and letter grade.
+"""
+
+
 def get_switch_value(list_of_scores):
+    """
+Use reST style.
+:param list_of_scores:
+:return: letter_grade
+raises keyError: raises an exception
+    """
 
     #switch statments go here
     for i in list_of_scores:
         letter_grade = {
             'A':100,
-            #'B':90,
+            'B':90,
             #'C':80,
             #'D':70,
             #'F':60
         }
 
-
         return letter_grade
     pass
 
-def switch_average(a_list_of_grades):
-    #docstring
+def switch_average(list_of_grades):
+    """
+Use reST style.
+:param list_of_grades:
+:return: letter_grade
+raises keyError: raises an exception
+    """
     #return_score = 0
     #make similar function wise to a switch statement
     #using a dictionary and if, elif, else
