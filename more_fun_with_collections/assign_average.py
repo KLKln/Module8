@@ -17,8 +17,10 @@ raises keyError: raises an exception
     #switch statments go here
     for i in list_of_scores:
 
-        if i >= 90:
+        if int(i) >= 90:
             letter_grade =  'A'
+        elif int(i) >= 80:
+            letter_grade = 'B'
             #'B':90,
             #'C':80,
             #'D':70,
