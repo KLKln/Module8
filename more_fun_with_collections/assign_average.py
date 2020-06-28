@@ -13,19 +13,23 @@ Use reST style.
 :return: letter_grade
 raises keyError: raises an exception
     """
-
+    letter_grade = ''
     #switch statments go here
     for i in list_of_scores:
-        letter_grade = {
-            'A':100,
-            'B':90,
+
+        if i >= 90:
+            letter_grade =  'A'
+            #'B':90,
             #'C':80,
             #'D':70,
             #'F':60
-        }
+
+
+
 
         return letter_grade
-    pass
+
+
 
 def switch_average(list_of_grades):
     """
