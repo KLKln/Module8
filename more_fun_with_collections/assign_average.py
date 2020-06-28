@@ -25,10 +25,8 @@ raises keyError: raises an exception
             letter_grade = 'C'
         elif int(i) >= 60:
             letter_grade = 'D'
-            #'B':90,
-            #'C':80,
-            #'D':70,
-            #'F':60
+        else:
+            letter_grade = 'F'
 
 
 
