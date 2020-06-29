@@ -1,8 +1,9 @@
 """
 Program: validate_input_in_functions_dict.py
 Author: Kelly Klein
-Last date modified: 6/17/2020
-This program will .
+Last date modified: 6/28/2020
+This program will get input from user for a number of test scores, store
+them in a dictionary, then print test name, score and test score average.
 """
 
 
@@ -11,7 +12,7 @@ def get_test_scores():
 Use reST style.
 :param invalid_message:"invalid test score, try again!"
 :return: test_name, test_score
-raises keyError: raises an exception
+raises TypeError: print("positive numbers only please")
     """
 
     scores_dict = dict()
@@ -39,18 +40,15 @@ raises keyError: raises an exception
             return print(key,':',value, 'average score: ', average_scores(scores_dict))
 
 
-
-# Key valuepair, score is going to be the value
-# I define the key
 def average_scores(scores_dict):
-    # num_scores = get length of dictionary
-    num_scores = len(scores_dict)
-    # parse every score in dictionary
-    for x in scores_dict.values():
-        x += x
-        # calculate the average
-        average = x / num_scores
-        return average
+    """
+    use reST stle
+    :param scores_dict:
+    :return: average
+    """
+
+    average = sum(scores_dict.values())/len(scores_dict.values())
+    return average
 
 
 def score_input(test_name, test_score=0, invalid_message='Invalid test score, try again!'):
