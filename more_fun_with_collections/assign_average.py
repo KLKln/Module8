@@ -13,8 +13,6 @@ Use reST style.
 :return: letter_grade
 raises keyError: raises an exception
     """
-    letter_grade = ''
-    #switch statments go here
     for i in list_of_scores:
         if int(i) >= 90:
             letter_grade = 'A'
@@ -29,35 +27,32 @@ raises keyError: raises an exception
         else:
             letter_grade = 'Not a viable score!'
 
-
-
         return letter_grade
 
 
-
-def switch_average(list_of_grades):
+def switch_average(list_of_scores):
     """
 Use reST style.
-:param list_of_grades:
-:return: letter_grade
+:param list_of_scores:
+:return: average
 raises keyError: raises an exception
     """
-    #return_score = 0
-    #make similar function wise to a switch statement
-    #using a dictionary and if, elif, else
-
-    list_of_scores = [100, 95, 78, 85, 99, 98]
-    #loop to get each value in a list_of_grades
-    list_of_scores +=[get_switch_value(value)]
-    #for each score in list , add to sum, divide by length
-    #return average
-    a_dict =  {
-        'A':100,
-        'B':90,
-        'C':80,
-        'D':70,
-        'F':60
-    }
+    average = sum(list_of_scores)/len(list_of_scores)
+    if average >= 90:
+        average_grade = 'A'
+    elif average >= 80:
+        average_grade = 'B'
+    elif average >= 70:
+        average_grade = 'C'
+    elif average >= 60:
+        average_grade = 'D'
+    elif 0 <= average <= 59:
+        average_grade = 'F'
+    else:
+        average_grade = 'Not a viable score!'
+    return print('your average score is:', average, ', which makes your average grade:', average_grade)
 
 
-pass
+if __name__ == '__main__':
+    switch_average(list_of_scores = [100, 95, 78, 85, 99, 98])
+

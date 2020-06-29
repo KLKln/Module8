@@ -1,5 +1,4 @@
 import unittest
-import unittest.mock as mock
 from more_fun_with_collections import assign_average as aa
 
 
