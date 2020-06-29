@@ -21,7 +21,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(aa.get_switch_value({55,55,55}), 'F')
 
     def test_non_key(self):
-        self.assertRaises(aa.get_switch_value('A'), 'raises error')
+        self.assertEqual(aa.get_switch_value({101, -5, 155}), 'Not a viable score!')
 
 
 if __name__ == '__main__':

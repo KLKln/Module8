@@ -16,18 +16,18 @@ raises keyError: raises an exception
     letter_grade = ''
     #switch statments go here
     for i in list_of_scores:
-
         if int(i) >= 90:
-            letter_grade =  'A'
+            letter_grade = 'A'
         elif int(i) >= 80:
             letter_grade = 'B'
         elif int(i) >= 70:
             letter_grade = 'C'
         elif int(i) >= 60:
             letter_grade = 'D'
-        else:
+        elif 0 <= int(i) <= 59:
             letter_grade = 'F'
-
+        else:
+            letter_grade = 'Not a viable score!'
 
 
 
